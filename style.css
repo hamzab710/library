@@ -1,0 +1,128 @@
+body {
+    background-color: antiquewhite;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+    font-size: 4rem;
+    font-family: 'GrotesqueBourgeoisieRegular';
+    color: rgb(59, 58, 58);
+    text-align: center;
+    background-color: rgb(255, 179, 151);
+    padding: 2rem;
+    margin: -1rem -0.5rem 0 -0.5rem;
+    font-weight: 600;
+}
+
+#new-book {
+    font-size: 6rem;
+    background-color: rgb(207, 107, 70);
+    color: rgb(59, 58, 58);
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+    padding: 0.5rem 3rem;
+    border-radius: 1rem 0 0 1rem;
+    border: none;
+}
+
+.dialog {
+    border: solid black 2px;
+    background-color: antiquewhite;
+    width: 20rem;
+    border-radius: 2rem;
+}
+
+form {
+    padding: 20px;
+    display: grid;
+    gap: 1rem;
+    font-size: 1.5rem;
+    justify-content: center;
+}
+
+legend {
+    margin: 10px auto;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+input[type='text'],
+input[type='number'] {
+    height: 1.5rem;
+    width: 15rem;
+}
+
+form > button {
+    width: 10rem;
+    height: 2rem;
+    justify-self: center;
+    background-color: rgb(218, 196, 155);
+    border: solid silver 1px;
+    border-radius: 1rem;
+}
+
+label[for='read'],
+label[for='not-read'] {
+    font-size: 1.2rem;
+    margin-right: 2rem;
+}
+
+#book-library {
+    display: grid;
+    grid-template-columns: repeat(5, 20rem);
+    gap: 2rem;
+    position: relative;
+    top: 5rem;
+}
+
+#container {
+    border: solid black 2px;
+    background-color: rgb(255, 179, 151);
+    font-family: 'ConsolaMonoBook';
+    width: 20rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#book-remover {
+    position: absolute;
+    right: 0.3rem;
+    top: 0.5rem;
+    width: 2rem;
+}
+
+#edit-icon {
+    position: absolute;
+    left: 0.3rem;
+    top: 1rem;
+    width: 1.5rem;
+}
+
+#book-name {
+    font-family: 'EngineerHandRegular';
+    background-color:  rgb(248, 242, 242);
+    border: none;
+    width: 20rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    padding: 1rem 0;
+}
+
+#reading-status {
+    border: none;
+    width: 10rem;
+    background-color: inherit;
+    font-size: 1.5rem;
+    font-family: 'ConsolaMonoBook';
+    padding: 1rem 0;
+}
+
+.radio-buttons {
+    display: grid;
+    justify-content: center;
+}

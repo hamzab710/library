@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/grotesque-bourgeoisie" type="text/css"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/engineer-hand" type="text/css"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/consolamono" type="text/css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="header">My Library</h1>
+    <button id="new-book">+</button>
+    <dialog class="dialog">
+        <form action="" method="dialog">
+            <legend>New Book</legend>
+            <div>
+                <input type="text" id="name" required placeholder="Title">
+            </div>
+            <div>
+                <input type="text" id="author" required placeholder="Author">
+            </div>
+            <div>
+                <input type="number" id="pages" required placeholder="Pages">
+            </div>
+            <div class="radio-buttons">
+                <p>Did you read it?</p>
+                <div>
+                    <input type="radio" id="read" name="reading-status" value="read" required>
+                    <label for="read">Yes</label>
+                    <input type="radio" id="not-read" name="reading-status" value="not read" required>
+                    <label for="not-read">No</label>
+                </div>
+            </div>
+            <button id="add-book">Save to Library</button>
+        </form>
+    </dialog>
+    <div id="book-library"></div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
