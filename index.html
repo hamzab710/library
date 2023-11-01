@@ -14,7 +14,7 @@
     <button id="new-book">+</button>
     <dialog class="dialog">
         <form action="" method="dialog">
-            <legend>New Book</legend>
+            <legend></legend>
             <div>
                 <input type="text" id="name" required placeholder="Title">
             </div>
@@ -37,8 +37,15 @@
         </form>
     </dialog>
     <div id="book-library"></div>
-
-
+    <footer class="footer">
+        <p>
+          Copyright ©
+          <script>
+            document.write(new Date().getFullYear())
+          </script>
+          hamzab710
+        <a href="https://github.com/hamzab710"><img src="icons/github.svg" alt="Github Icon" class="git-icon"></a></p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
