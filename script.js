@@ -1,8 +1,13 @@
+
 const form = document.querySelector('form');
 const anewBook = document.getElementById('new-book');
 const dialog = document.querySelector('dialog');
 const legend = document.querySelector('legend');
 const bookLibrary = document.getElementById('book-library');
+
+myLibrary = [];
+
+addLocalStorage();
 
 anewBook.addEventListener('click', () => {
     legend.textContent = 'New Book';
@@ -14,8 +19,6 @@ document.addEventListener('click', function (event) {
         dialog.close();
     }
 });
-
-myLibrary = [];
 
 function Book(name, author, pages, readingStatus) {
     this.name = name,
@@ -39,9 +42,8 @@ form.addEventListener('submit', function (event) {
     const readingStatus = readingStatusInput.value;
     
     let newBook = new Book(name, author, pages, readingStatus)
-    let newBookContainer = new BookContainer(newBook);
     myLibrary.push(newBook);
-    bookLibrary.appendChild(newBookContainer.element);
+    saveAndRenderBooks();
     dialog.close();
 
     nameInput.value = '';
@@ -128,6 +130,7 @@ function BookContainer(book) {
                 currentlyEditedBook.readingStatus = readingStatus;
     
                 updateBookContainer(currentlyEditedBook);
+                saveAndRenderBooks();
                 dialog.close();
                 currentlyEditedBook = null;
 
@@ -151,6 +154,7 @@ function BookContainer(book) {
         myLibrary.splice(index, 1);
     
         bookLibrary.removeChild(this.element);
+        saveAndRenderBooks();
     })
 }
 
@@ -162,6 +166,26 @@ function updateBookContainer(book) {
         bookContainer.querySelector('.pages').textContent = book.pages;
         bookContainer.querySelector('.read').textContent = book.readingStatus;
         bookContainer.querySelector('.read').style.color = book.readingStatus === 'read' ? 'green' : 'red';
+    }
+}
+
+function addLocalStorage() {
+    // localStorage => save things in key value pairs - key = library : myLibrary
+    myLibrary = JSON.parse(localStorage.getItem("library")) || [];
+    saveAndRenderBooks();
+}
+
+function saveAndRenderBooks() {
+    localStorage.setItem("library", JSON.stringify(myLibrary));
+    renderBooks();
+}
+
+function renderBooks() {
+    bookLibrary.textContent = "";
+    for (let i = 0; i < myLibrary.length; i++) {
+        const book = myLibrary[i];
+        let newBookContainer = new BookContainer(book);
+        bookLibrary.appendChild(newBookContainer.element);
     }
 }
 
